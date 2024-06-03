@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/di.dart';
 import '../cubit/species/species_cubit.dart';
 import '../widgets/species_list.dart';
-import '../widgets/species_list_search_widget.dart';
 
 @RoutePage()
 class SpeciesPage extends StatelessWidget {
@@ -24,7 +23,7 @@ class SpeciesPage extends StatelessWidget {
         },
         child: Scaffold(
           appBar: AppBar(title: const Text('Vulnerable Species')),
-          body: SpeciesList(),
+          body: const SpeciesList(),
         ),
       ),
     );
