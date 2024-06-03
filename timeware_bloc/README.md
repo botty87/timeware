@@ -1,16 +1,17 @@
-# timeware_bloc
+Utilizzo di Bloc per avere i vari states separati dall UI e clean architecture per avere il codice organizzato
 
-A new Flutter project.
+auto_route: utilizzato per gestire la navigazione e il redirect in caso di inserimento diretto di path in ambiente web
+dartz: usato per gestire le possibili risposte <Failure, Value> degli use cases
+dio: utilizzato per le query api
+equatable: usato per avere facilmente delle classi ==
+flutter_bloc: usato per lo state management
+flutter_hooks: usato per "evitare" gli stateful widget e gestire i textEditingController
 
-## Getting Started
+json_annotation
+freezed_annotation: usato per creare entities e states, con supporto json
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+get_it
+injectable dep injection
+  
+logger: Log app
+shared_preferences: usato per salvare velocemente una "autenticazione" di base
