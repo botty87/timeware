@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/di/di.dart';
+import '../../../../core/routes/app_router.gr.dart';
 import '../cubit/species/species_cubit.dart';
 import '../widgets/species_list.dart';
 
@@ -22,7 +23,15 @@ class SpeciesPage extends StatelessWidget {
           }
         },
         child: Scaffold(
-          appBar: AppBar(title: const Text('Vulnerable Species')),
+          appBar: AppBar(
+            title: const Text('Vulnerable Species'),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.account_circle_outlined),
+                onPressed: () => context.router.push(const UserDetailsRoute()),
+              ),
+            ],
+          ),
           body: const SpeciesList(),
         ),
       ),

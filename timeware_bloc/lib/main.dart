@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
                 final router = getIt<AppRouter>();
                 switch (state) {
                   case UserStateLoggedOut():
-                    router.replace(const LoginRoute());
+                    router.replaceAll([const LoginRoute()]);
                   case UserStateLoggedIn():
-                    router.replace(const SpeciesRoute());
+                    router.replaceAll([const SpeciesRoute()]);
                   default:
                 }
               },
