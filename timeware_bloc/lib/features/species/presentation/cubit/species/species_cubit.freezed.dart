@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_cubit.dart';
+part of 'species_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,28 +15,34 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$SpeciesState {
   bool get isLoading => throw _privateConstructorUsedError;
   List<Species> get species => throw _privateConstructorUsedError;
+  String get searchQuery => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeStateCopyWith<HomeState> get copyWith =>
+  $SpeciesStateCopyWith<SpeciesState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $SpeciesStateCopyWith<$Res> {
+  factory $SpeciesStateCopyWith(
+          SpeciesState value, $Res Function(SpeciesState) then) =
+      _$SpeciesStateCopyWithImpl<$Res, SpeciesState>;
   @useResult
-  $Res call({bool isLoading, List<Species> species, String? errorMessage});
+  $Res call(
+      {bool isLoading,
+      List<Species> species,
+      String searchQuery,
+      String? errorMessage});
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$SpeciesStateCopyWithImpl<$Res, $Val extends SpeciesState>
+    implements $SpeciesStateCopyWith<$Res> {
+  _$SpeciesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -48,6 +54,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? isLoading = null,
     Object? species = null,
+    Object? searchQuery = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -59,6 +66,10 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
               as List<Species>,
+      searchQuery: null == searchQuery
+          ? _value.searchQuery
+          : searchQuery // ignore: cast_nullable_to_non_nullable
+              as String,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -68,22 +79,26 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 }
 
 /// @nodoc
-abstract class _$$HomeStateImplCopyWith<$Res>
-    implements $HomeStateCopyWith<$Res> {
-  factory _$$HomeStateImplCopyWith(
-          _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
-      __$$HomeStateImplCopyWithImpl<$Res>;
+abstract class _$$SpeciesStateImplCopyWith<$Res>
+    implements $SpeciesStateCopyWith<$Res> {
+  factory _$$SpeciesStateImplCopyWith(
+          _$SpeciesStateImpl value, $Res Function(_$SpeciesStateImpl) then) =
+      __$$SpeciesStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, List<Species> species, String? errorMessage});
+  $Res call(
+      {bool isLoading,
+      List<Species> species,
+      String searchQuery,
+      String? errorMessage});
 }
 
 /// @nodoc
-class __$$HomeStateImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$HomeStateImpl>
-    implements _$$HomeStateImplCopyWith<$Res> {
-  __$$HomeStateImplCopyWithImpl(
-      _$HomeStateImpl _value, $Res Function(_$HomeStateImpl) _then)
+class __$$SpeciesStateImplCopyWithImpl<$Res>
+    extends _$SpeciesStateCopyWithImpl<$Res, _$SpeciesStateImpl>
+    implements _$$SpeciesStateImplCopyWith<$Res> {
+  __$$SpeciesStateImplCopyWithImpl(
+      _$SpeciesStateImpl _value, $Res Function(_$SpeciesStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -91,9 +106,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? species = null,
+    Object? searchQuery = null,
     Object? errorMessage = freezed,
   }) {
-    return _then(_$HomeStateImpl(
+    return _then(_$SpeciesStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -102,6 +118,10 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value._species
           : species // ignore: cast_nullable_to_non_nullable
               as List<Species>,
+      searchQuery: null == searchQuery
+          ? _value.searchQuery
+          : searchQuery // ignore: cast_nullable_to_non_nullable
+              as String,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -112,10 +132,11 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeStateImpl implements _HomeState {
-  const _$HomeStateImpl(
+class _$SpeciesStateImpl implements _SpeciesState {
+  const _$SpeciesStateImpl(
       {this.isLoading = true,
       final List<Species> species = const [],
+      this.searchQuery = '',
       this.errorMessage})
       : _species = species;
 
@@ -132,50 +153,58 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
+  @JsonKey()
+  final String searchQuery;
+  @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'HomeState(isLoading: $isLoading, species: $species, errorMessage: $errorMessage)';
+    return 'SpeciesState(isLoading: $isLoading, species: $species, searchQuery: $searchQuery, errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeStateImpl &&
+            other is _$SpeciesStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             const DeepCollectionEquality().equals(other._species, _species) &&
+            (identical(other.searchQuery, searchQuery) ||
+                other.searchQuery == searchQuery) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading,
-      const DeepCollectionEquality().hash(_species), errorMessage);
+      const DeepCollectionEquality().hash(_species), searchQuery, errorMessage);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
-      __$$HomeStateImplCopyWithImpl<_$HomeStateImpl>(this, _$identity);
+  _$$SpeciesStateImplCopyWith<_$SpeciesStateImpl> get copyWith =>
+      __$$SpeciesStateImplCopyWithImpl<_$SpeciesStateImpl>(this, _$identity);
 }
 
-abstract class _HomeState implements HomeState {
-  const factory _HomeState(
+abstract class _SpeciesState implements SpeciesState {
+  const factory _SpeciesState(
       {final bool isLoading,
       final List<Species> species,
-      final String? errorMessage}) = _$HomeStateImpl;
+      final String searchQuery,
+      final String? errorMessage}) = _$SpeciesStateImpl;
 
   @override
   bool get isLoading;
   @override
   List<Species> get species;
   @override
+  String get searchQuery;
+  @override
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
+  _$$SpeciesStateImplCopyWith<_$SpeciesStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

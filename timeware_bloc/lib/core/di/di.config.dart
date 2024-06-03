@@ -15,13 +15,19 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:logger/logger.dart' as _i5;
 import 'package:shared_preferences/shared_preferences.dart' as _i3;
 
-import '../../features/home/data/datasources/species_data_source.dart' as _i15;
-import '../../features/home/data/repositories/species_repository_impl.dart'
+import '../../features/species/data/datasources/species_data_source.dart'
+    as _i15;
+import '../../features/species/data/repositories/species_repository_impl.dart'
     as _i17;
-import '../../features/home/domain/repositories/species_repository.dart'
+import '../../features/species/domain/repositories/species_repository.dart'
     as _i16;
-import '../../features/home/domain/usecases/get_species.dart' as _i18;
-import '../../features/home/presentation/cubit/home_cubit.dart' as _i19;
+import '../../features/species/domain/usecases/get_species%20details.dart'
+    as _i19;
+import '../../features/species/domain/usecases/get_species.dart' as _i18;
+import '../../features/species/presentation/cubit/species/species_cubit.dart'
+    as _i21;
+import '../../features/species/presentation/cubit/species_details/species_details_cubit.dart'
+    as _i20;
 import '../../features/user/data/datasources/user_data_source.dart' as _i7;
 import '../../features/user/data/repositories/user_repository_impl.dart' as _i9;
 import '../../features/user/domain/repositories/user_repository.dart' as _i8;
@@ -30,7 +36,7 @@ import '../../features/user/presentation/cubit/login/login_cubit.dart' as _i14;
 import '../../features/user/presentation/cubit/user/user_cubit.dart' as _i13;
 import '../bloc_observer.dart' as _i12;
 import '../routes/app_router.dart' as _i4;
-import 'di.dart' as _i20;
+import 'di.dart' as _i22;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -73,9 +79,14 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i17.SpeciesRepositoryImpl(gh<_i15.SpeciesDataSource>()));
     gh.lazySingleton<_i18.GetSpecies>(
         () => _i18.GetSpecies(gh<_i16.SpeciesRepository>()));
-    gh.factory<_i19.HomeCubit>(() => _i19.HomeCubit(gh<_i18.GetSpecies>()));
+    gh.lazySingleton<_i19.GetSpeciesDetails>(
+        () => _i19.GetSpeciesDetails(gh<_i16.SpeciesRepository>()));
+    gh.factory<_i20.SpeciesDetailsCubit>(
+        () => _i20.SpeciesDetailsCubit(gh<_i19.GetSpeciesDetails>()));
+    gh.factory<_i21.SpeciesCubit>(
+        () => _i21.SpeciesCubit(gh<_i18.GetSpecies>()));
     return this;
   }
 }
 
-class _$AppModule extends _i20.AppModule {}
+class _$AppModule extends _i22.AppModule {}

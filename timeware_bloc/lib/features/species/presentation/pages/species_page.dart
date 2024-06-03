@@ -3,18 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/di/di.dart';
-import '../cubit/home_cubit.dart';
+import '../cubit/species/species_cubit.dart';
 import '../widgets/species_list.dart';
+import '../widgets/species_list_search_widget.dart';
 
 @RoutePage()
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SpeciesPage extends StatelessWidget {
+  const SpeciesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<HomeCubit>(
+    return BlocProvider<SpeciesCubit>(
       create: (context) => getIt()..getSpeciesList(),
-      child: BlocListener<HomeCubit, HomeState>(
+      child: BlocListener<SpeciesCubit, SpeciesState>(
         listener: (context, state) {
           if (state.errorMessage != null) {
             ScaffoldMessenger.of(context)
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
         },
         child: Scaffold(
           appBar: AppBar(title: const Text('Vulnerable Species')),
-          body: const SpeciesList(),
+          body: SpeciesList(),
         ),
       ),
     );
