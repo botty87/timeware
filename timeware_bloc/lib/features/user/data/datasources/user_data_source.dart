@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:timeware_bloc/features/user/domain/entities/user.dart';
+import '../../domain/entities/user.dart';
 
 abstract class UserDataSource {
   Future<User> loginUser({required String email, required String password});

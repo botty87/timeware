@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:timeware_bloc/core/di/di.dart';
-import 'package:timeware_bloc/core/routes/app_router.dart';
-import 'package:timeware_bloc/core/routes/app_router.gr.dart';
-import 'package:timeware_bloc/features/user/presentation/cubit/user/user_cubit.dart';
+import 'core/di/di.dart';
+import 'core/routes/app_router.dart';
+import 'core/routes/app_router.gr.dart';
+import 'features/user/presentation/cubit/user/user_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timeware_bloc/core/error/failures.dart';
-import 'package:timeware_bloc/core/usecases/usecase.dart';
-import 'package:timeware_bloc/features/user/domain/entities/user.dart';
-import 'package:timeware_bloc/features/user/domain/repositories/user_repository.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../entities/user.dart';
+import '../repositories/user_repository.dart';
 
 @lazySingleton
 class LoginUser implements UseCase<User, LoginUserParams> {

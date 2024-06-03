@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timeware_bloc/core/error/failures.dart';
-import 'package:timeware_bloc/features/user/data/datasources/user_data_source.dart';
-import 'package:timeware_bloc/features/user/domain/entities/user.dart';
-import 'package:timeware_bloc/features/user/domain/repositories/user_repository.dart';
+import '../../../../core/error/failures.dart';
+import '../datasources/user_data_source.dart';
+import '../../domain/entities/user.dart';
+import '../../domain/repositories/user_repository.dart';
 
 @LazySingleton(as: UserRepository)
 class UserRepositoryImpl implements UserRepository {

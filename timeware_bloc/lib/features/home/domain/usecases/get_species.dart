@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timeware_bloc/core/error/failures.dart';
-import 'package:timeware_bloc/core/usecases/usecase.dart';
-import 'package:timeware_bloc/features/home/domain/entities/species.dart';
-import 'package:timeware_bloc/features/home/domain/repositories/species_repository.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../entities/species.dart';
+import '../repositories/species_repository.dart';
 
 @lazySingleton
 class GetSpecies implements UseCase<List<Species>, NoParams> {

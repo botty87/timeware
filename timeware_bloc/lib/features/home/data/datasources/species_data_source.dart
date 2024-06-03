@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:timeware_bloc/features/home/domain/entities/species.dart';
+import '../../domain/entities/species.dart';
 
 abstract class SpeciesDataSource {
   Future<List<Species>> getSpeciesList();
