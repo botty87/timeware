@@ -1,10 +1,10 @@
 part of 'home_cubit.dart';
 
-abstract class HomeState extends Equatable {
-  const HomeState();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class HomeState with _$HomeState {
+  const factory HomeState({
+    @Default(true) bool isLoading,
+    @Default([]) List<Species> species,
+    String? errorMessage,
+  }) = _HomeState;
 }
-
-class HomeInitial extends HomeState {}
