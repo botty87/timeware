@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
-import 'package:native_dio_adapter/native_dio_adapter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'di.config.dart';
@@ -21,8 +20,7 @@ abstract class AppModule {
   Future<SharedPreferences> getSharedPreferences() => SharedPreferences.getInstance();
 
   @lazySingleton
-  Dio get dio => Dio(BaseOptions(baseUrl: 'https://apiv3.iucnredlist.org/api/v3/species'))
-    ..httpClientAdapter = NativeAdapter();
+  Dio get dio => Dio(BaseOptions(baseUrl: 'https://apiv3.iucnredlist.org/api/v3/species'));
 
   @lazySingleton
   @Named('apiKey')

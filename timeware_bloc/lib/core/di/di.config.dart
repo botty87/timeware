@@ -21,9 +21,9 @@ import '../../features/species/data/repositories/species_repository_impl.dart'
     as _i17;
 import '../../features/species/domain/repositories/species_repository.dart'
     as _i16;
-import '../../features/species/domain/usecases/get_species%20details.dart'
-    as _i19;
 import '../../features/species/domain/usecases/get_species.dart' as _i18;
+import '../../features/species/domain/usecases/get_species_details.dart'
+    as _i19;
 import '../../features/species/presentation/cubit/species/species_cubit.dart'
     as _i21;
 import '../../features/species/presentation/cubit/species_details/species_details_cubit.dart'
@@ -64,7 +64,7 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i10.LoginUser(gh<_i8.UserRepository>()));
     gh.lazySingleton<_i11.BlocObserver>(
         () => _i12.SimpleBlocObserver(logger: gh<_i5.Logger>()));
-    gh.factory<_i13.UserCubit>(
+    gh.singleton<_i13.UserCubit>(
         () => _i13.UserCubit(gh<_i3.SharedPreferences>()));
     gh.factory<_i14.LoginCubit>(() => _i14.LoginCubit(gh<_i10.LoginUser>()));
     gh.lazySingleton<String>(

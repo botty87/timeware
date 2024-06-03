@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'core/di/di.dart';
 import 'core/routes/app_router.dart';
 import 'core/routes/app_router.gr.dart';
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<UserCubit>(
-      create: (context) => getIt()..readUser(),
+    return BlocProvider<UserCubit>.value(
+      value: getIt<UserCubit>(),
       child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           title: 'Timeware',
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

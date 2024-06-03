@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/di/di.dart';
 import '../cubit/login/login_cubit.dart';
 import '../cubit/user/user_cubit.dart';
@@ -30,11 +31,14 @@ class LoginPage extends StatelessWidget {
                   TextField(
                     decoration: const InputDecoration(labelText: 'Email'),
                     onChanged: (value) => context.read<LoginCubit>().emailChanged(value),
+                    textInputAction: TextInputAction.next,
                   ),
                   TextField(
                     decoration: const InputDecoration(labelText: 'Password'),
                     obscureText: true,
                     onChanged: (value) => context.read<LoginCubit>().passwordChanged(value),
+                    textInputAction: TextInputAction.done,
+                    onSubmitted: (_) => context.read<LoginCubit>().login(),
                   ),
                   const SizedBox(height: 16),
                   BlocSelector<LoginCubit, LoginState, String?>(

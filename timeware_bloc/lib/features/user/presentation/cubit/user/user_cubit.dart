@@ -10,16 +10,15 @@ import '../../../domain/entities/user.dart';
 part 'user_state.dart';
 part 'user_cubit.freezed.dart';
 
-@injectable
+@singleton
 class UserCubit extends Cubit<UserState> {
   final SharedPreferences _sharedPreferences;
 
-  UserCubit(this._sharedPreferences) : super(const UserState.loading());
+  UserCubit(this._sharedPreferences) : super(const UserState.loading()) {
+    _readUser();
+  }
 
-  void readUser() async {
-    //Emulate a network request for the user
-    await Future.delayed(const Duration(seconds: 1));
-
+  void _readUser() {
     final userJson = _sharedPreferences.getString('user');
     if (userJson != null) {
       final user = User.fromJson(jsonDecode(userJson));

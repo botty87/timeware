@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../domain/entities/species_details/species_details.dart';
-import '../../../domain/usecases/get_species details.dart';
+import '../../../domain/usecases/get_species_details.dart';
 
 part 'species_details_state.dart';
 part 'species_details_cubit.freezed.dart';
